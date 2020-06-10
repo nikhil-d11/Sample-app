@@ -13,7 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Share intent"
-        android:layout_marginBottom="50dp"
          />
 
     <Button
@@ -21,5 +20,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="open Browser"
+        android:layout_margin="30dp"
+        />
+    <Button
+        android:id="@+id/button_mainactivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Main Activity"
         />
 </LinearLayout>
