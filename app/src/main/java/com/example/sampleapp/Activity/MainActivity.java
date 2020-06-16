@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     private int share_return_code=1;
@@ -56,6 +58,15 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("testing edittext",""+text.getText());
                 intent.putExtra("title",text.getText().toString());
                 startActivityForResult(intent,share_return_code);
+            }
+        });
+
+        Button button_checklistactivity=findViewById(R.id.button_checklist_activity);
+        button_checklistactivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,ChecklistActivity.class);
+                startActivity(i);
             }
         });
     }

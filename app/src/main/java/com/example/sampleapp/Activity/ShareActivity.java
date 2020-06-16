@@ -60,5 +60,7 @@ public class ShareActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+
     }
 }
