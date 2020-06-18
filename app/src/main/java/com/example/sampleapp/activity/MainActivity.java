@@ -1,4 +1,4 @@
-package com.example.sampleapp;
+package com.example.sampleapp.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,11 +15,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.Random;
+import com.example.sampleapp.RecyclerView.ChecklistActivity;
+import com.example.sampleapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int share_return_code=1;
+    final static private int share_return_code=1;
     String edit_text="";
     Integer i=0;
     TextView print_int;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,ShareActivity.class);
+                Intent intent=new Intent(MainActivity.this, ShareActivity.class);
                 Log.d("testing edittext",""+text.getText());
                 intent.putExtra("title",text.getText().toString());
                 startActivityForResult(intent,share_return_code);
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         button_checklistactivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,ChecklistActivity.class);
+                Intent i = new Intent(MainActivity.this, ChecklistActivity.class);
                 startActivity(i);
             }
         });
