@@ -1,4 +1,4 @@
-package com.example.sampleapp.RecyclerView;
+package com.example.sampleapp.recyclerview;
 
 import android.content.Context;
 import android.util.Log;
@@ -19,10 +19,10 @@ import java.util.ArrayList;
 
 public class ChecklistAdapter extends RecyclerView.Adapter<ChecklistAdapter.ViewHolder>{
 
-    private ArrayList<model> data;
+    private ArrayList<Model> data;
     private Context context;
 
-    public ChecklistAdapter(Context context,ArrayList<model> data) {
+    public ChecklistAdapter(Context context,ArrayList<Model> data) {
         this.data = data;
         this.context = context;
     }
@@ -38,7 +38,7 @@ public class ChecklistAdapter extends RecyclerView.Adapter<ChecklistAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ChecklistAdapter.ViewHolder holder, final int position) {
 
-        final model cur=data.get(position);
+        final Model cur=data.get(position);
 
         holder.checkBox.setChecked(cur.getIschecked());
         holder.name.setText(cur.getName());

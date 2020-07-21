@@ -1,4 +1,4 @@
-package com.example.sampleapp.RecyclerView;
+package com.example.sampleapp.recyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -18,7 +17,7 @@ import java.util.UUID;
 
 public class ChecklistActivity extends AppCompatActivity {
 
-    ArrayList<model> data=new ArrayList<>();
+    ArrayList<Model> data=new ArrayList<>();
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     Button addrandom,markall,deleteselected,unmarkall;
@@ -50,7 +49,7 @@ public class ChecklistActivity extends AppCompatActivity {
         addrandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                data.add(new model(UUID.randomUUID().toString().substring(0,6)));
+                data.add(new Model(UUID.randomUUID().toString().substring(0,6)));
                 adapter.notifyItemInserted(data.size()-1);
             }
         });
@@ -84,7 +83,7 @@ public class ChecklistActivity extends AppCompatActivity {
         deleteselected.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Iterator<model> itr=data.iterator();
+                Iterator<Model> itr=data.iterator();
                 while (itr.hasNext()){
                     if(itr.next().getIschecked()){
                         itr.remove();

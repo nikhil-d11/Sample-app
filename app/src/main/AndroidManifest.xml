@@ -9,18 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShareActivity"></activity>
-        <activity android:name=".SplashActivity" >
+        <activity android:name=".databinding.CalculatorActivity"></activity>
+        <activity android:name=".database.CheckListWithDBActivity" />
+        <activity android:name=".recyclerview.ChecklistActivity" />
+        <activity android:name=".activity.ShareActivity" />
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity"
-            android:launchMode="singleTop">
-
-        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

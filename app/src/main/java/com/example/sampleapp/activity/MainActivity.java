@@ -1,4 +1,4 @@
-package com.example.sampleapp.Activity;
+package com.example.sampleapp.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +15,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.sampleapp.RecyclerView.ChecklistActivity;
+import com.example.sampleapp.database.CheckListWithDBActivity;
+import com.example.sampleapp.databinding.Calculator;
+import com.example.sampleapp.databinding.CalculatorActivity;
+import com.example.sampleapp.recyclerview.ChecklistActivity;
 import com.example.sampleapp.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -67,6 +70,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, ChecklistActivity.class);
+                startActivity(i);
+            }
+        });
+
+        Button button_checklistactivity_roomdb=findViewById(R.id.button_checklist_activity_roomdb);
+        button_checklistactivity_roomdb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, CheckListWithDBActivity.class);
+                startActivity(i);
+            }
+        });
+
+        Button button_calculator=findViewById(R.id.button_calculator);
+        button_calculator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, CalculatorActivity.class);
                 startActivity(i);
             }
         });

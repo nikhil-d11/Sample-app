@@ -2,23 +2,27 @@ package com.example.sampleapp.recyclerview;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity
-public class model {
-    @PrimaryKey
+@Entity(tableName = "model")
+public class Model {
+    @PrimaryKey(autoGenerate = true)
     public int uid;
     @ColumnInfo(name="ischecked")
     public Boolean ischecked=false;
     @ColumnInfo(name = "name")
     public String name;
 
-    public model(Boolean ischecked, String name) {
+
+    public Model(int uid, Boolean ischecked, String name) {
+        this.uid = uid;
         this.ischecked = ischecked;
         this.name = name;
     }
 
-    public model(String name) {
+    @Ignore
+    public Model(String name) {
         this.name = name;
     }
 
